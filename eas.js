@@ -16,7 +16,14 @@ const createGrid = ()=>{
             container.appendChild(divGrid[i][j])
         }
     }
+    return divGrid;
 }
 
-createGrid()
+const hoverDiv = (div)=>{
+    div.addEventListener("hover",(e)=>{
+        div.classList.add("div-hover")
+    })
+}
 
+let div = createGrid()
+hoverDiv(div)

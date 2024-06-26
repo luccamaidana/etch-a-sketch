@@ -25,3 +25,7 @@ body{
     border: 1px solid blue;
     box-sizing: border-box;
 }
+
+.div-hover{
+    background-color: black;
+}
