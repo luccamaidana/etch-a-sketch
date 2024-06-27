@@ -1,10 +1,12 @@
 const container = document.querySelector(".container")
 const button = document.querySelector("#changeGrid")
-const divGrid = []
-let size = 16
+const delBtn = document.querySelector("#delete")
+let divGrid = []
+let pixelCant = 16
 
 const createGrid = (s)=>{
     container.innerHTML = ``
+    divGrid = []
     container.setAttribute(`style`,`width:${s*20.125}px; height: ${s*20.125}px`)
     for (let i = 1; i <= s; i++) {
         for (let j = 1; j <= s; j++) {
@@ -14,11 +16,11 @@ const createGrid = (s)=>{
             divGrid.push(div)
         }
     }
-    hoverDiv(divGrid)
+    hoverDiv()
 }
 
-const hoverDiv = (div)=>{
-    div.forEach(div =>{
+const hoverDiv = ()=>{
+    divGrid.forEach(div =>{
         div.addEventListener("mouseover",()=>{
             div.classList.add("div-hover")
         })
@@ -27,7 +29,7 @@ const hoverDiv = (div)=>{
 
 const popUp = ()=>{
     button.addEventListener("click",()=>{
-        let pixelCant = Number(prompt(`Change the numbers of squares per side for the new grid.\n\nE.g: 16 (min amount) - 100 (max amount)`))
+        pixelCant = Number(prompt(`Change the numbers of squares per side for the new grid.\n\nE.g: 16 (min amount) - 100 (max amount)`))
         if (pixelCant >= 16 && pixelCant <=100){
             createGrid(pixelCant)
         }
@@ -37,10 +39,16 @@ const popUp = ()=>{
     })
 }
 
+const deleteGrid = ()=>{
+    delBtn.addEventListener("click",()=>{
+       createGrid(pixelCant)
+    })
+}
+
 const main = ()=>{
     popUp()
-    createGrid(size)
-    
+    deleteGrid()
+    createGrid(pixelCant)
 }
 
 main()
