@@ -7,10 +7,10 @@ body{
 }
 
 .container{
-    margin: 0;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid red;
+    border: 1px solid black;
     width: 322px;
     height: 322px;
     box-sizing: border-box;
@@ -22,7 +22,7 @@ body{
     width: 20px;
     display: flex;
     flex: 0 0 20px;
-    border: 1px solid blue;
+    border: 1px solid rgba(128, 128, 128, 0.726);
     box-sizing: border-box;
 }
 
@@ -31,5 +31,11 @@ body{
 }
 
 .div-item:hover{
-    background-color: gray;
+    background-color: rgb(53, 49, 49);
+}
+
+#changeGrid{
+    margin-left: 68em;
+    margin-top: 1em;
+    margin-bottom: 1em; 
 }
