@@ -5,6 +5,7 @@ let size = 16
 
 const createGrid = (s)=>{
     container.innerHTML = ``
+    container.setAttribute(`style`,`width:${s*20.125}px; height: ${s*20.125}px`)
     for (let i = 1; i <= s; i++) {
         for (let j = 1; j <= s; j++) {
             let div = document.createElement("div")
@@ -29,7 +30,8 @@ const popUp = ()=>{
         let pixelCant = Number(prompt(`Change the numbers of squares per side for the new grid.\n\nE.g: 16 (min amount) - 100 (max amount)`))
         if (pixelCant >= 16 && pixelCant <=100){
             createGrid(pixelCant)
-        } else {
+        }
+        else {
             alert(`Please, enter a number between 16 and 100`)
         }
     })
