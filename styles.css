@@ -29,3 +29,7 @@ body{
 .div-hover{
     background-color: black;
 }
+
+.div-item:hover{
+    background-color: gray;
+}
