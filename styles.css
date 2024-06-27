@@ -10,9 +10,9 @@ body{
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
     width: 322px;
-    height: 322px;
+    border: 1px solid black;
+    height: 322px; 
     box-sizing: border-box;
 }
 
