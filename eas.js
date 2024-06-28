@@ -30,13 +30,31 @@ const getRndColor = ()=>{
     return `rgb(${r},${g},${b})`
 }
 
-const hoverDiv = ()=>{
+/* const hoverDiv = ()=>{
     divGrid.forEach(div =>{
         div.addEventListener("mouseover",()=>{
             div.setAttribute(`style`, `background-color:${getRndColor()}; opacity: ${40}%`);
             //div.classList.add("div-hover")
         })
     })
+} */
+
+const hoverDiv = () => {
+    divGrid.forEach(div => {
+        div.addEventListener("mouseover", () => {
+            div.setAttribute(`style`, `background-color:${getRndColor()}; opacity: ${40}%`);
+        });
+
+        div.addEventListener("touchmove", (event) => {
+            event.preventDefault(); 
+            let touch = event.touches[0]; 
+            let target = document.elementFromPoint(touch.clientX, touch.clientY); 
+
+            if (target && target.classList.contains("div-item")) {
+                div.setAttribute(`style`, `background-color:${getRndColor()}; opacity: ${40}%`);
+            }
+        });
+    });
 }
 
 const popUp = ()=>{
