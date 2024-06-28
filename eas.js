@@ -7,7 +7,11 @@ let pixelCant = 16
 const createGrid = (s)=>{
     container.innerHTML = ``
     divGrid = []
-    container.setAttribute(`style`,`width:${s*20.125}px; height: ${s*20.125}px`)
+    if (s===40)
+        container.setAttribute(`style`,`width:${s*20.05}px; height: ${s*20.05}px`)
+    else
+        container.setAttribute(`style`,`width:${s*20.125}px; height: ${s*20.125}px`)
+
     for (let i = 1; i <= s; i++) {
         for (let j = 1; j <= s; j++) {
             let div = document.createElement("div")
@@ -29,12 +33,12 @@ const hoverDiv = ()=>{
 
 const popUp = ()=>{
     button.addEventListener("click",()=>{
-        pixelCant = Number(prompt(`Change the numbers of squares per side for the new grid.\n\nE.g: 16 (min amount) - 100 (max amount)`))
-        if (pixelCant >= 16 && pixelCant <=100){
+        pixelCant = Number(prompt(`Change the numbers of squares per side for the new grid.\n\nE.g: 16 (min amount) - 40 (max amount)`))
+        if (pixelCant >= 16 && pixelCant <=40){
             createGrid(pixelCant)
         }
         else {
-            alert(`Please, enter a number between 16 and 100`)
+            alert(`Please, enter a number between 16 and 40`)
         }
     })
 }
