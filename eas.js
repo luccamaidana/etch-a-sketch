@@ -23,10 +23,18 @@ const createGrid = (s)=>{
     hoverDiv()
 }
 
+const getRndColor = ()=>{
+    r = Math.floor(Math.random() * 256)
+    g = Math.floor(Math.random() * 256)
+    b = Math.floor(Math.random() * 256)
+    return `rgb(${r},${g},${b})`
+}
+
 const hoverDiv = ()=>{
     divGrid.forEach(div =>{
         div.addEventListener("mouseover",()=>{
-            div.classList.add("div-hover")
+            div.setAttribute(`style`, `background-color:${getRndColor()}; opacity: ${40}%`);
+            //div.classList.add("div-hover")
         })
     })
 }
