@@ -4,6 +4,16 @@ html{
 
 body{
     margin: 0;
+    background-color: #e63947ee;
+}
+
+h1{
+    text-align: center;
+    color: #ffb703;
+    font-family: "Playwrite US Modern", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
 }
 
 .container{
@@ -14,6 +24,7 @@ body{
     border: 1px solid black;
     height: 322px; 
     box-sizing: border-box;
+    background-color: white;
 }
 
 .div-item{
@@ -34,11 +45,21 @@ body{
     background-color: rgb(53, 49, 49);
 }
 
+#btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 14em;
+}
+
 #changeGrid,#delete{
-    margin-top: 1em;
-    margin-bottom: 1em; 
-    width: 100px;
-    height: 25px;
+    font-family: "Playwrite US Modern", cursive;
+    width: 7em;
+    height: 7em;
+    border-radius: 100%;
+    margin-top: 3em;
+    margin-bottom: 3em; 
+    
 }
 
 .erase{
